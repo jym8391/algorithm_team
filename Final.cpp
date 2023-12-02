@@ -156,6 +156,7 @@ void InitSolve(int Solve[MAZE_SIZE][MAZE_SIZE]) {
     }
 }
 
+//백트래킹 힌트 사용
 int Hint1(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE], position HstPlayer, bool& havekey) {
     GotoXY(0, 6);
     printf("havekey : %d", havekey);
@@ -260,67 +261,6 @@ int Hint(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE], int ca
     }
     return 0;
 }
-
-//백트래킹 힌트 사용
-//int Hint(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE], int canbreak, position HstPlayer) {
-//    GotoXY(0, 6);
-//    printf("havekey : %d", havekey);
-//
-//    PrintSovle(Solve); //백트래킹 과정 확인하는 함수
-//    Sleep(10);
-//
-//    //if (!havekey) { // havekey 없을때 hint 사용 불가
-//    //    return 0;
-//    //}
-//
-//    if (havekey) {
-//        if (Maze[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] == 5) {
-//            Solve[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 2;
-//            return 1;
-//        }
-//    }
-//
-//    if (canbreak && Maze[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] == 3) { //벽을 부술 수 있다면, 벽을 부수고 움직여라
-//        Solve[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 2;
-//        Maze[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 1; // 벽 부수기
-//
-//        for (int i = 0; i < 4; i++) {
-//            int nx = HstPlayer.x + 2 * dx[i];
-//            int ny = HstPlayer.y + dy[i];
-//            if (Hint(Maze, Solve, canbreak - 1, { nx,ny }) == 1) {
-//                Maze[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 6; //H 힌트 표시
-//                return 1;
-//            }
-//        }
-//        // reset the wall for backtracking
-//        Solve[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 1;
-//        Maze[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 3;
-//    }
-//
-//    if (H_isValid(Maze, HstPlayer)) {
-//        if (Solve[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] == 2) {
-//            return 0;
-//        }
-//
-//        Solve[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 2;
-//
-//        if (Maze[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] == 4) { // define key point as 4 -> make it true
-//            havekey = true;
-//        }
-//
-//        for (int i = 0; i < 4; i++) {
-//            int nx = HstPlayer.x + 2 * dx[i];
-//            int ny = HstPlayer.y + dy[i];
-//            if (Hint(Maze, Solve, canbreak, { nx,ny }) == 1) {
-//                return 1;
-//            }
-//        }
-//
-//        Solve[HstPlayer.y - Y_AXIS][int(HstPlayer.x - X_AXIS) / 2] = 1; // if there is no move, backtracking
-//    }
-//
-//    return 0;
-//}
 
 //키보드 입력
 void InputProcess(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE]) {
