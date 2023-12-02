@@ -136,7 +136,7 @@ void BreakWall(int Maze[MAZE_SIZE][MAZE_SIZE]) {
 }
 
 //힌트 경로 출력
-void PrintSovle(int Solve[MAZE_SIZE][MAZE_SIZE]) {
+void PrintSolve(int Solve[MAZE_SIZE][MAZE_SIZE]) {
     for (int i = 0; i < MAZE_SIZE; i++) {
         GotoXY(0, 7 + i);
         for (int j = 0; j < MAZE_SIZE; j++) {
@@ -161,8 +161,8 @@ int Hint1(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE], posit
     GotoXY(0, 6);
     printf("havekey : %d", havekey);
 
-    PrintSovle(Solve); //백트래킹 과정 확인하는 함수
-    Sleep(10);
+    //PrintSolve(Solve); //백트래킹 과정 확인하는 함수
+    //Sleep(10);
 
     //if (!havekey) { // havekey 없을때 hint 사용 불가
     //    return 0;
@@ -198,8 +198,8 @@ int Hint2(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE], int c
     GotoXY(0, 6);
     printf("havekey : %d", havekey);
 
-    PrintSovle(Solve); //백트래킹 과정 확인하는 함수
-    Sleep(10);
+    //PrintSolve(Solve); //백트래킹 과정 확인하는 함수
+    //Sleep(10);
 
     if (!havekey) { // havekey 없을때 hint 사용 불가
         return 0;
@@ -272,7 +272,7 @@ void InputProcess(int Maze[MAZE_SIZE][MAZE_SIZE], int Solve[MAZE_SIZE][MAZE_SIZE
         HstPlayer.x = stPlayer.x;
         HstPlayer.y = stPlayer.y;
         Hint(Maze, Solve, 1, HstPlayer);
-        PrintSovle(Solve);
+        //PrintSolve(Solve);
 
     }
     if (GetAsyncKeyState(VK_LCONTROL) & 0x8000) { //벽 부수기
