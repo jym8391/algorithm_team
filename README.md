@@ -15,3 +15,9 @@ algorithm term project
 벽을 부술 수 있는 횟수는 정해져 있으니 신중하게 사용해주세요!    
   
 게임 종료 : 다시 시작하시려면 space 키를, 종료하시려면 enter 키를 누르시면 됩니다.  
+
+![텀프 시연영상](https://github.com/jym8391/algorithm_team/assets/65708226/17ab6d8e-d75c-4123-bea8-6f8d116c7422)  
+
+
+
+![텀프 백트래킹 디버깅 영상](https://github.com/jym8391/algorithm_team/assets/65708226/47ce9679-f9b8-4992-ba6d-86e951608677)  
